@@ -35,3 +35,7 @@ ul.navbar-nav {
 .product-card__image-wrapper img {
   max-width: 100%;
 }
+
+.hero-button-wrapper {
+  gap: 1rem;
+}

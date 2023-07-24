@@ -5,10 +5,12 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices/";
 import { Layout } from "@/components/Layout";
+import Header from "@/components/Header/Header";
 
-const Product = () => {
+const Product = ({ page, navigation, settings }) => {
   return (
     <Layout>
+      <Header />
       <main className="mt-5 pt-4">
     <div className="container mt-5">
         <div className="row">
@@ -82,3 +84,19 @@ const Product = () => {
 };
 
 export default Product;
+
+export async function getStaticProps({ locale, previewData }) {
+  const client = createClient({ previewData });
+
+  const page = await client.getByUID("page", "home", { lang: locale });
+  const navigation = await client.getSingle("navigation", { lang: locale });
+  const settings = await client.getSingle("settings", { lang: locale });
+
+  return {
+    props: {
+      page,
+      navigation,
+      settings,
+    },
+  };
+}
