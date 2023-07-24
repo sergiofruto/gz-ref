@@ -1,0 +1,37 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white {
+  @apply pt-0 md:pt-0;
+} */
+
+:root {
+  --brand-blue: #1A2887;
+}
+
+.bg-primary {
+  background-color: var(--brand-blue)!important;
+}
+
+button.btn-primary {
+  background-color: var(--brand-blue)!important;
+}
+
+ul.navbar-nav {
+  gap: 2rem;
+}
+
+#form1 {
+  border: 1px solid #dedede;
+}
+
+.home-feature-circle.fas {
+  width: 1.25em;
+  height: 1.25em;
+  padding-top: 0.2rem;
+}
+
+.product-card__image-wrapper img {
+  max-width: 100%;
+}
